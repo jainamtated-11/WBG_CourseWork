@@ -1,0 +1,36 @@
+.option scale=1u
+
+* MOS Models
+.model nfet NMOS (LEVEL=1 VTO=0.7 KP=120u LAMBDA=0.02)
+.model pfet PMOS (LEVEL=1 VTO=-0.7 KP=60u LAMBDA=0.02)
+
+* Power Supply
+Vdd vdd 0 5
+
+* Input A (fast toggle)
+Va A 0 PULSE(0 5 0 1n 1n 10n 20n)
+
+* Input B (slow toggle)
+Vb B 0 PULSE(0 5 0 1n 1n 20n 40n)
+
+* PMOS (series for NOR)
+M1 n1 A vdd vdd pfet W=10 L=3
+M2 Y  B n1  vdd pfet W=10 L=3
+
+* NMOS (parallel for NOR)
+M3 Y A 0 0 nfet W=10 L=3
+M4 Y B 0 0 nfet W=10 L=3
+
+* Load capacitance
+Cload Y 0 10f
+
+.tran 1n 80n
+
+.control
+run
+plot v(A)
+plot v(B)
+plot v(Y)
+.endc
+
+.end

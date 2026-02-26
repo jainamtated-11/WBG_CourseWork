@@ -1,0 +1,41 @@
+* SPICE3 file created from nandgate.ext - technology: scmos
+
+
+.option scale=1u
+
+* Transistor Models
+.model nfet NMOS (LEVEL=1 VTO=0.7 KP=120u LAMBDA=0.02)
+.model pfet PMOS (LEVEL=1 VTO=-0.7 KP=60u LAMBDA=0.02)
+
+* Power Supply
+Vdd vdd 0 5
+
+* Input A (faster toggle)
+Va a 0 PULSE(0 5 0 1n 1n 10n 20n)
+
+* Input B (slower toggle)
+Vb b 0 PULSE(0 5 0 1n 1n 20n 40n)
+
+* PMOS (parallel)
+M1 z b vdd vdd pfet W=8 L=3
+M2 z a vdd vdd pfet W=8 L=3
+
+* NMOS (series)
+M3 z a n1 0 nfet W=8 L=3
+M4 n1 b 0 0 nfet W=8 L=3
+
+* Load capacitance
+Cload z 0 10f
+
+.tran 1n 80n
+
+.control
+run
+
+
+
+plot v(a)
+plot v(b)
+plot v(z)
+
+.endc

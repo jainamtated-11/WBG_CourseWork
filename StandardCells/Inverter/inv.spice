@@ -1,0 +1,29 @@
+* SPICE3 file created from inv82.ext - technology: scmos
+
+.model pfet pmos level=1 VTO=-0.7 KP=40u LAMBDA=0.02
+.model nfet nmos level=1 VTO=0.7 KP=80u LAMBDA=0.02
+
+.option scale=1u
+
+
+M1000 out in vdd vdd pfet w=8 l=2
++ ad=64p pd=32u as=40p ps=26u
+
+M1001 out in gnd gnd nfet w=4 l=2
++ ad=32p pd=24u as=20p ps=18u
+
+C0 out 0 3.384f
+C1 in 0 7.296f
+
+V1 vdd gnd 1.8
+Vin in gnd PULSE(0 1.8 5n 1n 1n 20n 50n)
+
+.tran 5n 200n
+
+.control
+run
+plot V(in) V(out)
+.endc
+
+.end
+
