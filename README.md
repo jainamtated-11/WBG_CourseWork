@@ -1,52 +1,62 @@
-# Standard Cell Design Project – SKY130
+Standard Cell Design 
+📌 Project Summary
 
-## 📌 Project Overview
-This repository documents my ongoing work on **CMOS standard cell design using the SKY130 (130nm) PDK**.  
-The objective of this project is to understand and implement the complete standard cell design flow from schematic to layout-level verification.
+This repository captures my hands-on exploration of CMOS standard cell development with the SKY130 (130nm) Process Design Kit.
 
----
+The primary aim is to gain practical experience with the full custom standard cell workflow — starting from transistor-level schematics and progressing through layout implementation and post-layout verification.
 
-## ✅ Work Completed
+✅ Progress So Far
 
-- Transistor-level design of:
-  - CMOS Inverter (INV)
-  - 2-Input NAND Gate
-  - 2-Input NOR Gate
-- SPICE simulation using NGSPICE
-- Physical layout design using Magic
-- Design Rule Check (DRC) verification
-- Parasitic extraction from layout
-- Switch-level functional verification using IRSIM
+So far, I have designed and validated the following basic logic cells at the transistor level:
 
-This work demonstrates understanding of:
-- Pull-up and Pull-down network design
-- CMOS logic implementation
-- Layout design rules (130nm)
-- Basic ASIC standard cell development flow
+CMOS Inverter (INV)
 
----
+2-Input NAND Gate
 
-## 🔄 Current Focus
+2-Input NOR Gate
 
-- Layout optimization and area improvement  
-- Propagation delay analysis  
-- Power estimation fundamentals  
-- Preparing for integration into larger digital design flows  
+The completed work includes:
 
----
+SPICE-based circuit simulation using NGSPICE
 
-## 🗓 Estimated Completion
+Layout creation in Magic
 
-**May 2026**
+Design Rule Check (DRC) validation
 
----
+Parasitic extraction from the layout
 
-## 🎯 Long-Term Goal
+Switch-level functionality verification with IRSIM
 
-The long-term objective of this project is to transition from CMOS standard cell design to **GaN-based circuit drivers**, focusing on high-speed and high-power device applications.
+Through this process, I have developed practical understanding of:
 
----
+Pull-up and pull-down network construction
 
-## 📈 Project Status
+CMOS logic gate realization
 
-🟢 Ongoing – Continuous updates and improvements will be pushed to this repository.
+130nm layout constraints and design rules
+
+Fundamentals of ASIC-oriented standard cell design
+
+🔄 Current Areas of Work
+
+At this stage, I am focusing on:
+
+Improving layout efficiency and minimizing cell area
+
+Analyzing propagation delay characteristics
+
+Understanding basic power estimation techniques
+
+Preparing these cells for integration into larger digital design environments
+
+🗓 Target Completion
+
+Expected completion: May 2026
+
+🎯 Future Direction
+
+The broader vision behind this work is to build a strong foundation in CMOS standard cell design and later extend that knowledge toward GaN-based driver circuits, particularly for high-speed and high-power applications.
+
+📈 Current Status
+
+🟢 Active Project — The repository will continue to evolve with incremental improvements and deeper analysis.
